@@ -6,7 +6,7 @@ function App() {
 
   const algorithms = [
     { id: "bubbleSort", name: "Bubble Sort", desc: "Compare adjacent elements", time: "O(n²)", space: "O(1)" },
-    { id: "quick", name: "Quick Sort", desc: "Divide and conquer strategy", time: "O(n log n)", space: "O(log n)" },
+    { id: "quickSort", name: "Quick Sort", desc: "Divide and conquer strategy", time: "O(n log n)", space: "O(log n)" },
     { id: "merge", name: "Merge Sort", desc: "Split, sort and merge", time: "O(n log n)", space: "O(n)" },
     { id: "insertion", name: "Insertion Sort", desc: "Build sorted array step by step", time: "O(n²)", space: "O(1)" },
   ];

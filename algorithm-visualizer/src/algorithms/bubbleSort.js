@@ -9,9 +9,10 @@ export function bubbleSort(arr) {
                 let temp = a[j];
                 a[j] = a[j + 1];
                 a[j + 1] = temp;
-
+                
+                steps.push([...a])
             }
-            steps.push([...a])
+        
         }
     }
 

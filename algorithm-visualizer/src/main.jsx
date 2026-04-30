@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import BubbleSort from "./algorithms/bubbleSort.jsx"
+import QuickSort from "./algorithms/quickSort.jsx"
 
 createRoot(document.getElementById('root')).render(
 
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/algorithms/bubbleSort" element={<BubbleSort />} />
+        <Route path="/algorithms/quickSort" element={<QuickSort />} />  
       </Routes>
     </BrowserRouter>
   </StrictMode>,

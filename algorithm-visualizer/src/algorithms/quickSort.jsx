@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { bubbleSort } from "./bubbleSort.js";
+import { quickSort } from "./quickSort.js";
 import "./style.css";
 
-export default function BubbleSort() {
+export default function QuickSort() {
   const navigate = useNavigate();
-  const [currentArray, setCurrentArray] = useState([5, 3, 8, 1, 2]);
+  const [currentArray, setCurrentArray] = useState([12, 7, 3, 15, 9, 1, 10, 4, 8, 6]);
   const [isSorting, setIsSorting] = useState(false);
 
   function sleep(ms) {
@@ -13,14 +13,14 @@ export default function BubbleSort() {
   }
 
   function HandleReset() {
-    setCurrentArray([5, 3, 8, 1, 2]);
+    setCurrentArray([12, 7, 3, 15, 9, 1, 10, 4, 8, 6]);
   }
 
   async function HandleSort() {
     if (isSorting) return;
     setIsSorting(true);
 
-    const result = bubbleSort([...currentArray]);
+    const result = quickSort([...currentArray]);
 
     for (let i = 0; i < result.length; i++) {
       setCurrentArray([...result[i]]);
@@ -32,7 +32,7 @@ export default function BubbleSort() {
 
   return (
     <div className="visualizer-container">
-      <h1>Bubble Sort Visualizer</h1>
+      <h1>Quick Sort Visualizer</h1>
 
       <div className="array-display">
         Tablica: [ {currentArray.join(", ")} ]
@@ -44,12 +44,12 @@ export default function BubbleSort() {
             <div className="dot yellow"></div>
             <div className="dot green"></div>
           </div>
-          <span className="algorithm-name">bubbleSort.js</span>
+          <span className="algorithm-name">quickSort.js</span>
         </div>
 
         <div className="bars-wrapper">
           {currentArray.map((value, index) => (
-            <div key={index} className="bar" style={{ height: `${value * 25}px` }}>
+            <div key={index} className="bar" style={{ height: `${value * 15}px` }}>
               {value}
             </div>
           ))}
